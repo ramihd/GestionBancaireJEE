@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="bean">
+	<class name="Client" table="client">
+		<id
+			column="id_client"
+			name="idClient"
+			type="java.lang.Long"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="prenom"
+			length="50"
+			name="prenom"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="adresse"
+			length="50"
+			name="adresse"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="num_tel"
+			length="50"
+			name="numTel"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="CIN"
+			length="10"
+			name="cin"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="nom"
+			length="50"
+			name="nom"
+			not-null="true"
+			type="string"
+		 />
+	</class>
+</hibernate-mapping>

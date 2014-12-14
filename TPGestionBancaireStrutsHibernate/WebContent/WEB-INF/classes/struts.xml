@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="package" />
+
+	<package name="gi3.struts2" namespace="/vue" extends="struts-default">
+
+		<action name="loginPage">
+			<result>/vue/LoginAB.jsp</result>
+		</action>
+
+		<action name="MenuAB" class="gi3.struts2.ValidateAgentBancaire">
+			<result name="success">/vue/gestionClients.jsp</result>
+			<result name="error">/vue/Error.jsp</result>
+			<result name="input">/vue/LoginAB.jsp</result>
+			<result name="login">/vue/gestionAB.jsp</result>
+		</action>
+
+		<action name="hrefAddAgent">
+			<result name="success">/vue/addAgent.jsp</result>
+		</action>
+
+		<action name="hrefAddClient">
+			<result name="success">/vue/addClient.jsp</result>
+		</action>
+
+		<action name="hrefDelAgent">
+			<result name="success">/vue/delAgent.jsp</result>
+		</action>
+
+		<action name="hrefDelClient">
+			<result name="success">/vue/delClient.jsp</result>
+		</action>
+
+		<action name="hrefUpdateAgent">
+			<result name="success">/vue/updateAgent.jsp</result>
+		</action>
+
+		<action name="hrefUpdateClient">
+			<result name="success">/vue/updateClient.jsp</result>
+		</action>
+
+		<action name="listAgents" class="gi3.struts2.ListAgents">
+			<result name="success">/vue/listAgents.jsp</result>
+		</action>
+
+		<action name="listClients" class="gi3.struts2.ListClients">
+			<result name="success">/vue/listClients.jsp</result>
+		</action>
+		
+		<action name="acceuilClient">
+			<result name="success">/vue/gestionClients.jsp</result>
+		</action>
+		
+		<action name="acceuilAB">
+			<result name="success">/vue/gestionAB.jsp</result>
+		</action>
+
+		<action name="addAgent" class="gi3.struts2.AddAgent">
+			<result name="success">/vue/listAgents.jsp</result>
+			<result name="error">/vue/addAgent.jsp</result>
+			<result name="input">/vue/addAgent.jsp</result>
+		</action>
+
+		<action name="addClient" class="gi3.struts2.AddClient">
+			<result name="success">/vue/listClients.jsp</result>
+			<result name="error">/vue/addClient.jsp</result>
+			<result name="input">/vue/addClient.jsp</result>
+		</action>
+
+		<action name="delAgent" class="gi3.struts2.DelAgent">
+			<result name="success">/vue/listAgents.jsp</result>
+			<result name="error">/vue/delAgent.jsp</result>
+			<result name="input">/vue/delAgent.jsp</result>
+		</action>
+
+		<action name="delClient" class="gi3.struts2.DelClient">
+			<result name="success">/vue/listClients.jsp</result>
+			<result name="error">/vue/delClient.jsp</result>
+			<result name="input">/vue/delClient.jsp</result>
+		</action>
+
+		<action name="updateAgent" class="gi3.struts2.UpdateAgent">
+			<result name="success">/vue/ConfirmUpdateAgent.jsp</result>
+			<result name="error">/vue/updateAgent.jsp</result>
+			<result name="input">/vue/updateAgent.jsp</result>
+		</action>
+
+		<action name="updateClient" class="gi3.struts2.UpdateClient">
+			<result name="success">/vue/ConfirmUpdateClient.jsp</result>
+			<result name="error">/vue/updateClient.jsp</result>
+			<result name="input">/vue/updateClient.jsp</result>
+		</action>
+
+		<action name="ConfirmUpdateAgent" class="gi3.struts2.ConfirmUpdateAgent">
+			<result name="success">/vue/listAgents.jsp</result>
+			<result name="error">/vue/ConfirmUpdateAgent.jsp</result>
+			<result name="input">/vue/ConfirmUpdateAgent.jsp</result>
+		</action>
+
+		<action name="ConfirmUpdateClient" class="gi3.struts2.ConfirmUpdateClient">
+			<result name="success">/vue/listClients.jsp</result>
+			<result name="error">/vue/ConfirmUpdateClient.jsp</result>
+			<result name="input">/vue/ConfirmUpdateClient.jsp</result>
+		</action>
+
+		<action name="gestionComptes" class="gi3.struts2.GestionComptes"
+			method="getList">
+			<result name="success">/vue/gestionComptes.jsp</result>
+		</action>
+
+		<action name="addCompte" class="gi3.struts2.GestionComptes"
+			method="addCompte">
+			<result name="success">/vue/gestionComptes.jsp</result>
+			<result name="error">/vue/Error.jsp</result>
+			<result name="input">/vue/gestionComptes.jsp</result>
+		</action>
+
+		<action name="delCompte" class="gi3.struts2.GestionComptes"
+			method="delCompte">
+			<result name="success">/vue/gestionComptes.jsp</result>
+		</action>
+		
+		<action name="depotCompte" class="gi3.struts2.UpdateCompte"
+			method="depot">
+			<result name="success">/vue/depotCompte.jsp</result>
+		</action>
+		
+		<action name="retraitCompte" class="gi3.struts2.UpdateCompte"
+			method="retrait">
+			<result name="success">/vue/retraitCompte.jsp</result>
+		</action>
+		
+		<action name="depotMontant" class="gi3.struts2.UpdateCompte"
+			method="depotMontant">
+			<result name="success">/vue/gestionComptes.jsp</result>
+		</action>
+		
+		<action name="retraitMontant" class="gi3.struts2.UpdateCompte"
+			method="retraitMontant">
+			<result name="success">/vue/gestionComptes.jsp</result>
+			<result name="error">/vue/Error.jsp</result>
+		</action>
+
+	</package>
+</struts> 
