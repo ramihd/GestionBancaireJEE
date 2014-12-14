@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="bean">
+	<class name="AgentBancaire" table="agentbancaire">
+		<id
+			column="id"
+			name="id"
+			type="java.lang.Long"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="prenom"
+			length="50"
+			name="prenom"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="isAdmin"
+			name="isAdmin"
+			not-null="false"
+			type="boolean"
+		 />
+		<property
+			column="login"
+			length="50"
+			name="login"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="password"
+			length="50"
+			name="password"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="nom"
+			length="50"
+			name="nom"
+			not-null="true"
+			type="string"
+		 />
+	</class>
+</hibernate-mapping>

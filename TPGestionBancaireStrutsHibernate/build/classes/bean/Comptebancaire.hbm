@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="bean">
+	<class name="CompteBancaire" table="comptebancaire">
+		<id
+			column="rib"
+			name="rib"
+			type="java.lang.Long"
+		>
+			<generator class="native" />
+		</id>
+		<property
+			column="solde"
+			length="22"
+			name="solde"
+			not-null="true"
+			type="java.lang.Double"
+		 />
+		<property
+			column="nom_client"
+			length="100"
+			name="nomClient"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="id_client"
+			length="19"
+			name="idClient"
+			not-null="true"
+			type="java.lang.Long"
+		 />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<!DOCTYPE validators PUBLIC 
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<validators>
+	<field name="name">
+		<field-validator type="requiredstring">
+			<message>The name is required</message>
+		</field-validator>
+	</field>
+
+	<field name="surname">
+		<field-validator type="requiredstring">
+			<message>The surname is required</message>
+		</field-validator>
+	</field>
+
+	<field name="adresse">
+		<field-validator type="requiredstring">
+			<message>The adress is required</message>
+		</field-validator>
+	</field>
+
+	<field name="numTel">
+		<field-validator type="requiredstring">
+			<message>The phone number is required</message>
+		</field-validator>
+	</field>
+
+</validators>
