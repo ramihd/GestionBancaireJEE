@@ -30,6 +30,7 @@ public class ValidateAgentBancaire extends ActionSupport{
 			query.setParameter("agent_pass", getPassword());
 			List<AgentBancaire> results = query.list();
 			if (results.size() > 0) {
+				System.out.println("Inside action....");
 				//setAgentBancaire(results.get(0));
 				AgentBancaire ab = results.get(0);
 				if (ab.getIsAdmin() == false){

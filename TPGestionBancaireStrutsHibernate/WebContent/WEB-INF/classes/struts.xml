@@ -9,13 +9,21 @@
 
 	<package name="gi3.struts2" namespace="/vue" extends="struts-default">
 
+		<interceptors>
+			<interceptor name="myinterceptor" class="interceptor.MyInterceptor" />
+		</interceptors>
+
 		<action name="loginPage">
 			<result>/vue/LoginAB.jsp</result>
 		</action>
 
 		<action name="MenuAB" class="gi3.struts2.ValidateAgentBancaire">
+			<interceptor-ref name="myinterceptor" />
+			<interceptor-ref name="params" />
+			<interceptor-ref name="timer" />
+			<interceptor-ref name="logger" />
 			<result name="success">/vue/gestionClients.jsp</result>
-			<result name="error">/vue/Error.jsp</result>
+			<result name="error">/vue/LoginAB.jsp</result>
 			<result name="input">/vue/LoginAB.jsp</result>
 			<result name="login">/vue/gestionAB.jsp</result>
 		</action>
@@ -51,11 +59,11 @@
 		<action name="listClients" class="gi3.struts2.ListClients">
 			<result name="success">/vue/listClients.jsp</result>
 		</action>
-		
+
 		<action name="acceuilClient">
 			<result name="success">/vue/gestionClients.jsp</result>
 		</action>
-		
+
 		<action name="acceuilAB">
 			<result name="success">/vue/gestionAB.jsp</result>
 		</action>
@@ -124,22 +132,22 @@
 			method="delCompte">
 			<result name="success">/vue/gestionComptes.jsp</result>
 		</action>
-		
+
 		<action name="depotCompte" class="gi3.struts2.UpdateCompte"
 			method="depot">
 			<result name="success">/vue/depotCompte.jsp</result>
 		</action>
-		
+
 		<action name="retraitCompte" class="gi3.struts2.UpdateCompte"
 			method="retrait">
 			<result name="success">/vue/retraitCompte.jsp</result>
 		</action>
-		
+
 		<action name="depotMontant" class="gi3.struts2.UpdateCompte"
 			method="depotMontant">
 			<result name="success">/vue/gestionComptes.jsp</result>
 		</action>
-		
+
 		<action name="retraitMontant" class="gi3.struts2.UpdateCompte"
 			method="retraitMontant">
 			<result name="success">/vue/gestionComptes.jsp</result>
